@@ -136,24 +136,24 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-เพราะเป็น sample testcase ของโจทย์
+ทดสอบค่าที่ทำให้ค่าแรงไม่เกิน 1000 และไม่น้อยกว่า 50
 ```
 
 Input:
 ```text
-100
+800
 ```
 
 Expected output:
 
 ```text
-160.50
+941.60
 ```
 
 Actual output:
 
 ```text
-160.50
+941.60
 ```
 
 Result:
