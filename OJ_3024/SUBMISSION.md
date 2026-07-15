@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3017
+3024 — [LEARNING LOGS] SurprisingVote
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-544651
+554529
 ```
 
 OJ status:
@@ -32,8 +32,8 @@ Pass
 
 Independent time spent on this problem:
 
-```
-0-15 min
+```text
+15-30 min
 ```
 
 Choose one:
@@ -66,13 +66,19 @@ How to count this time:
 
 ## 2. My Understanding
 
-Write the problem in your own words.`
+Write the problem in your own words.
 
 Also explain the input, output, and important constraints.
 
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
-``` ให้รับตัวเลขจำนวนเต็ม a มา 1 ค่าแล้วคืนค่า z ออกมาโดย (a + b) + ((a + b) * 7%) และ b มีค่าเท่ากับ (a + b) * 0.1 โดยมีค่าสูงสุด ที่ 1000 และค่าน้อยสุดที่ 50
+```text
+Take 2 input: Total rating and highest rating.
+
+There exist a number pool consisting of 3 variable. Only total sum and
+highest value out of all variable are given. Output "Surprising" 
+if maximum possible range inside a domain exceed 2; otherwise, output
+"Not surprising".
 ```
 
 ---
@@ -92,9 +98,22 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1: รับค่า input
-Step 2: คำนวนค่าแรงโดยใช้ input * 0.1 โดยให้ค่าน้อยสุดที่ 50 และมากสุดที่ 1000 แล้วนำไปจดจำใส่ตัวแปร
-Step 3: นำค่าตัวแปรมาบวกกับค่าตัวแปร * 0.07 ( + 7%) แล้วปรื้นคืนค่า
+Step 1: Receive input.
+
+Step 2: Subtract the highest rating from the pool.
+
+Step 3: Calculate the maximum value difference (delta) of remaining 2
+variables, Start with minimum delta pair of [ Pool / 2 | pool / 2 ] 
+in case of pool being even, and [ Pool / 2 + 1 | pool / 2 - 1 ] in
+case of pool being odd
+Step 4: After finding the minimum delta combination, start iterating
+through numbers by increasing left key and decreasing right key by 1
+per iteration, until left key hit 10 or highest rating, or right key
+hitting 0
+
+Step 4: Compare the right key to the highest rating. If value
+differences exceeds 2, output "Surprising"; otherswise, output
+"Not surprising"
 ```
 
 ---
@@ -114,9 +133,28 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-Step 1: รับค่า input
-Step 2: คำนวนค่าแรงโดยใช้ input * 0.1 โดยให้ค่าน้อยสุดที่ 50 และมากสุดที่ 1000 แล้วนำไปจดจำใส่ตัวแปร
-Step 3: นำค่าตัวแปรมาบวกกับค่าตัวแปร * 0.07 ( + 7%) แล้วปรื้นคืนค่า
+Step 1: Receive input.
+
+Step 2: Subtract the highest rating from the pool.
+
+Step 3: Find the maximum score range between middle and lowest voter.
+Lowest possible rating can be found by subtracting a pool with
+higest possible rating. This is due to the fact that we knew that
+pool are result of middle + lowest rating, the greater the middle
+rating are, the lower the lowest rating it can be.
+
+Step 4: Start by determining maximum rating of middle vote, we will
+start with by defining that the highest rating is the total amount
+in the pool that doesn't exceeds highest rating.
+
+Step 5: Once we obtained the highest possible rating for middle vote,
+we will subtract the pool with highest possible middle rating
+to obtain lowest possible rating.
+
+Step 6: Then, we will compare a highest rating with lowest possible rating.
+output "Surprising" if delta exceed 2; otherswise, output "Not surprising"
+
+Step 7: Voilà!
 ```
 
 ---
@@ -136,24 +174,26 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-ทดสอบค่าที่ทำให้ค่าแรงไม่เกิน 1000 และไม่น้อยกว่า 50
+Standard test where maximum range in a pool did not exceeds 2
+(Highest possible values differences is 2 from 10,10,8)
 ```
 
 Input:
 ```text
-800
+28
+10
 ```
 
 Expected output:
 
 ```text
-941.60
+Not surprising
 ```
 
 Actual output:
 
 ```text
-941.60
+Not surprising
 ```
 
 Result:
@@ -167,25 +207,27 @@ Pass
 Why I chose this case:
 
 ```text
-เพื่อทดสอบค่าน้อยสุดของค่าแรง (UPPER CEILING VALUE)
+Test where maximum range in a pool did exceeds 2
+(Highest possible values differences is 3 from 8,8,5)
 ```
 
 Input:
 
 ```text
-1
+21
+8
 ```
 
 Expected output:
 
 ```text
-54.57
+Surprising
 ```
 
 Actual output:
 
 ```text
-54.57
+Surprising
 ```
 
 Result:
@@ -199,23 +241,25 @@ Pass
 Why I chose this case:
 
 ```text
-เพื่อทดสอบค่ามากสุดของแรง (LOWER CEILING VALUE)
+This test case test for when all value inside a domain are all
+equal ( Delta = 0, Value = [5,5,5] )
 ```
 
 Input:
 ```text
-10000000
+15
+5
 ```
 
 Expected output:
 
 ```text
-1177000.00
+Not surprising
 ```
 
 Actual output:
 ```text
-1177000.00
+Not surprising
 ```
 
 Result:
@@ -249,7 +293,7 @@ If you only asked a friend, TA, or instructor and did not use AI, you do not nee
 Did you ask a friend, TA, instructor, or another person for help on this problem?
 
 ```text
-Yes
+No
 ```
 
 If yes, briefly explain what kind of help you received.
@@ -274,19 +318,19 @@ Not allowed:
 Who helped you?
 
 ```text
-Pair week 1
+No one
 ```
 
 What did they help with?
 
 ```text
-โทรเพื่อช่วยกันคิดโจทย์
+None
 ```
 
 What did you still do by yourself?
 
 ```text
-ได้ใช้ความแนวคิดตัวเองในการคิดปัญหา
+None
 ```
 
 Did you copy any code from another person?

@@ -15,13 +15,13 @@ If AI was used for this learning-log-required problem, also complete `ai_reflect
 OJ problem number/title:
 
 ```text
-3017
+3022 — [LEARNING LOGS] Temperature
 ```
 
 OJ submission ID, if submitted:
 
 ```text
-544651
+554520
 ```
 
 OJ status:
@@ -32,7 +32,7 @@ Pass
 
 Independent time spent on this problem:
 
-```
+```text
 0-15 min
 ```
 
@@ -66,13 +66,18 @@ How to count this time:
 
 ## 2. My Understanding
 
-Write the problem in your own words.`
+Write the problem in your own words.
 
 Also explain the input, output, and important constraints.
 
 If you do not fully understand the problem yet, write what you currently understand. Your understanding may be incomplete or incorrect, but you must make a genuine attempt.
 
-``` ให้รับตัวเลขจำนวนเต็ม a มา 1 ค่าแล้วคืนค่า z ออกมาโดย (a + b) + ((a + b) * 7%) และ b มีค่าเท่ากับ (a + b) * 0.1 โดยมีค่าสูงสุด ที่ 1000 และค่าน้อยสุดที่ 50
+```text
+Take 3 inputs: Current temp value (int), current temp unit (str), and
+target temp unit (str).
+
+convert the temp value of current temp unit into value of new unit and
+return the value as output.
 ```
 
 ---
@@ -92,9 +97,10 @@ This can be rough. It may be incomplete or different from your final solution.
 You may write pseudocode, a flowchart idea, or step-by-step thinking.
 
 ```text
-Step 1: รับค่า input
-Step 2: คำนวนค่าแรงโดยใช้ input * 0.1 โดยให้ค่าน้อยสุดที่ 50 และมากสุดที่ 1000 แล้วนำไปจดจำใส่ตัวแปร
-Step 3: นำค่าตัวแปรมาบวกกับค่าตัวแปร * 0.07 ( + 7%) แล้วปรื้นคืนค่า
+Step 1: Receive input.
+Step 2: Convert the temperature into Celsius.
+Step 3: Compute the value from Celsius into target unit.
+Step 4: Output value.
 ```
 
 ---
@@ -114,9 +120,12 @@ Do not copy AI's explanation.
 Do not copy another person's explanation.
 
 ```text
-Step 1: รับค่า input
-Step 2: คำนวนค่าแรงโดยใช้ input * 0.1 โดยให้ค่าน้อยสุดที่ 50 และมากสุดที่ 1000 แล้วนำไปจดจำใส่ตัวแปร
-Step 3: นำค่าตัวแปรมาบวกกับค่าตัวแปร * 0.07 ( + 7%) แล้วปรื้นคืนค่า
+Step 1: Receive input.
+Step 2: Check if target and current unit are the same, if so, bypass
+the conversion entirely.
+Step 3: Convert the temperature into Celsius.
+Step 4: Compute the value from Celsius into target unit.
+Step 5: Output value.
 ```
 
 ---
@@ -136,24 +145,26 @@ If the input or output has many lines, write them inside the text blocks.
 Why I chose this case:
 
 ```text
-ทดสอบค่าที่ทำให้ค่าแรงไม่เกิน 1000 และไม่น้อยกว่า 50
+Attempt to convert a unit into Celsius (One-step conversion).
 ```
 
 Input:
 ```text
-800
+86
+F
+C
 ```
 
 Expected output:
 
 ```text
-941.60
+30
 ```
 
 Actual output:
 
 ```text
-941.60
+30
 ```
 
 Result:
@@ -167,25 +178,28 @@ Pass
 Why I chose this case:
 
 ```text
-เพื่อทดสอบค่าน้อยสุดของค่าแรง (UPPER CEILING VALUE)
+Convert a non-Celsius unit into another Non-Celsius unit (Two-step
+conversion)
 ```
 
 Input:
 
 ```text
-1
+32
+F
+R
 ```
 
 Expected output:
 
 ```text
-54.57
+491.67
 ```
 
 Actual output:
 
 ```text
-54.57
+491.67
 ```
 
 Result:
@@ -199,23 +213,25 @@ Pass
 Why I chose this case:
 
 ```text
-เพื่อทดสอบค่ามากสุดของแรง (LOWER CEILING VALUE)
+Attempt to convert one unit into self.
 ```
 
 Input:
 ```text
-10000000
+100
+K
+K
 ```
 
 Expected output:
 
 ```text
-1177000.00
+100.00
 ```
 
 Actual output:
 ```text
-1177000.00
+100.00
 ```
 
 Result:
@@ -249,7 +265,7 @@ If you only asked a friend, TA, or instructor and did not use AI, you do not nee
 Did you ask a friend, TA, instructor, or another person for help on this problem?
 
 ```text
-Yes
+No
 ```
 
 If yes, briefly explain what kind of help you received.
@@ -274,19 +290,19 @@ Not allowed:
 Who helped you?
 
 ```text
-Pair week 1
+No one
 ```
 
 What did they help with?
 
 ```text
-โทรเพื่อช่วยกันคิดโจทย์
+None
 ```
 
 What did you still do by yourself?
 
 ```text
-ได้ใช้ความแนวคิดตัวเองในการคิดปัญหา
+None
 ```
 
 Did you copy any code from another person?
