@@ -171,6 +171,6 @@ No
 | I understand my final code. | YES |
 | I recorded the real OJ status. | YES |
 | I did not copy AI-generated text directly into this file. | YES |
-| I did not copy code from another person. | |
+| I did not copy code from another person. | YES |
 | If I received human help, I disclosed it in this file. | YES |
 | I submitted the final code to the OJ by myself. | YES |
