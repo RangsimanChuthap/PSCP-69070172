@@ -1,4 +1,4 @@
-#PLEASE READ ME!!!!
+# PLEASE READ ME!!!!
 **Commit สำหรับปัญญาใน week1-week3 ผมเผลอ override เป็นเวอร์ชันก่อนแก้ไข ไปแล้วเพราะผมเผลอ force commit โดยที่ไม่ได้ fetch!! 😭😭😭**
 ผมได้มีการแก้ไขแล้วผ่าน github web และแก้ผ่านและส่ง Learning Log แล้วในใบเช็คชื่อ แต่ผมไม่ได้ fetch อัพเดตลงเครื่อง จากนั้น ผมได้ stage Learning Log ของ week 4 & 5 ผ่านในเครื่องโดยใช้ git CLI
 และได้ commit + push ลง repo, แต่มันไม่ผ่าน ผมเลย force push โดยที่ผมไม่รู้ว่า force push มันไม่ได้แปลว่าบังคับ push เฉพาะไฟล์ที่ staged + commit แล้วล่าสุด แต่มัน push ทั้งหมดใน repo ณ ปัจจุบัน
