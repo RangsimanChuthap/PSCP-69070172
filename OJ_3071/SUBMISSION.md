@@ -55,7 +55,7 @@ remainder, add 1 to the count.
 Step 1: Take 4 input: starting range, ending range, divider, and targeted fraction.
 
 Step 2: Find first number from starting range that is divisible by divider by performing
-floor division on starting range with divider, add target remainder to find first number
+ceiling division on starting range with divider, add target remainder to find first number
 after starting range that yield targeted fraction when divided.
 
 Step 3: Check if first divisible number that yield targeted fraction exceed ending range
