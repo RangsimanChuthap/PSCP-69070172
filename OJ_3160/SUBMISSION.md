@@ -324,7 +324,7 @@ None
 
 What did you still do by yourself?
 ```text
-Code implementation + initial algorithm.
+Everything
 ```
 
 Did you copy any code from another person?
