@@ -6,7 +6,7 @@
 OJ problem number/title:
 
 ```text
-2294 — [LEARNING LOGS] ส่งต่อ
+3394 — [LEARNING LOGS] ส่งต่อ
 ```
 
 OJ submission ID, if submitted:
